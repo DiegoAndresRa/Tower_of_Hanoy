@@ -47,10 +47,10 @@ void animacion();
    \_/\__,_|_| /__/ /_/    \___\___/_||_/__/
 
 */ 
-const GLuint WIDTH = 1000, HEIGHT = 800;
+const GLuint WIDTH = 1500, HEIGHT = 1000;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
-Camera  camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera  camera(glm::vec3(2.2f, 1.2f, 4.3f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
@@ -181,14 +181,14 @@ int main(){
 		// Set material properties
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "material.specular"), 1);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 20.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 32.0f);
 		// Setting View
 		GLint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 		glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
 		// Setting directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), 0.0f, 0.0f, -0.2f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.5f, 0.5f, 0.5f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.6f, 0.6f, 0.6f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.5f, 0.6f, 0.6f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
 
 		// Get the uniform locations of Model, View and Projection 
@@ -274,23 +274,23 @@ void DoMovement() {
 	}
 }
 // To animation
-void animacion(){
+void animacion() {
 	if (anim)
 	{
 		if (step1)
 		{
 			if (flag == 0) {
-				mov.y += 0.001f;
+				mov.y += 1.2f * deltaTime;
 				if (mov.y > 0.72)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov.x += 0.002f;
+				mov.x += 1.2f * deltaTime;
 				if (mov.x > 2.72)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov.y -= 0.005f;
+				mov.y -= 1.2f * deltaTime;
 				if (mov.y < -0.63f) {
 					step1 = false;
 					step2 = true;
@@ -302,17 +302,17 @@ void animacion(){
 		if (step2)
 		{
 			if (flag == 0) {
-				mov2.y += 0.001f;
+				mov2.y += 1.2f * deltaTime;
 				if (mov2.y > 1.048)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov2.x += 0.002f;
+				mov2.x += 1.2f * deltaTime;
 				if (mov2.x > 1.37)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov2.y -= 0.005f;
+				mov2.y -= 1.2f * deltaTime;
 				if (mov2.y < -0.347f) {
 					step2 = false;
 					step3 = true;
@@ -323,17 +323,17 @@ void animacion(){
 		}
 		if (step3) {
 			if (flag == 0) {
-				mov.y += 0.001f;
+				mov.y += 1.2f * deltaTime;
 				if (mov.y > 0.754)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov.x -= 0.002f;
+				mov.x -= 1.2f * deltaTime;
 				if (mov.x < 1.375)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov.y -= 0.005f;
+				mov.y -= 1.2f * deltaTime;
 				if (mov.y < -0.335f) {
 					step3 = false;
 					step4 = true;
@@ -343,17 +343,17 @@ void animacion(){
 		}
 		if (step4) {
 			if (flag == 0) {
-				mov3.y += 0.001f;
+				mov3.y += 1.2f * deltaTime;
 				if (mov3.y > 1.425)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov3.x += 0.002f;
+				mov3.x += 1.2f * deltaTime;
 				if (mov3.x > 2.74)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov3.y -= 0.005f;
+				mov3.y -= 1.2f * deltaTime;
 				if (mov3.y < -0.007f) {
 					step4 = false;
 					step5 = true;
@@ -363,17 +363,17 @@ void animacion(){
 		}
 		if (step5) {
 			if (flag == 0) {
-				mov.y += 0.001f;
+				mov.y += 1.2f * deltaTime;
 				if (mov.y > 0.75)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov.x -= 0.002f;
+				mov.x -= 1.2f * deltaTime;
 				if (mov.x < 0.02)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov.y -= 0.005f;
+				mov.y -= 1.2f * deltaTime;
 				if (mov.y < -0.635) {
 					step5 = false;
 					step6 = true;
@@ -383,17 +383,17 @@ void animacion(){
 		}
 		if (step6) {
 			if (flag == 0) {
-				mov2.y += 0.001f;
+				mov2.y += 1.2f * deltaTime;
 				if (mov2.y > 1.075)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov2.x += 0.002f;
+				mov2.x += 1.2f * deltaTime;
 				if (mov2.x > 2.732)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov2.y -= 0.005f;
+				mov2.y -= 1.2f * deltaTime;
 				if (mov2.y < -0.015) {
 					step6 = false;
 					step7 = true;
@@ -403,17 +403,17 @@ void animacion(){
 		}
 		if (step7) {
 			if (flag == 0) {
-				mov.y += 0.001f;
+				mov.y += 1.2f * deltaTime;
 				if (mov.y > 0.82)
 					flag = 1;
 			}
 			if (flag == 1) {
-				mov.x += 0.002f;
+				mov.x += 1.2f * deltaTime;
 				if (mov.x > 2.73)
 					flag = 2;
 			}
 			if (flag == 2) {
-				mov.y -= 0.005f;
+				mov.y -= 1.2f * deltaTime;
 				if (mov.y < -0.01) {
 					step7 = false;
 					step1 = true;
@@ -442,7 +442,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_SPACE]){
 		if (repeat) {
-			mov = glm::vec3(0.0f);
+			mov = glm::vec3(0.0f) ;
 			mov2 = glm::vec3(0.0f);
 			mov3 = glm::vec3(0.0f);
 		}
