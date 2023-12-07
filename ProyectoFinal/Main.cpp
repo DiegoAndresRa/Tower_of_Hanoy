@@ -119,7 +119,7 @@ int main(){
 		Create Shaders
 	*/
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");	// iluminación (ambient, point, spot)
-	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag"); // figuras básicas
+
 
 	/*
 		Models 
