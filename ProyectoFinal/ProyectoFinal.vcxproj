@@ -22,18 +22,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lighting2.frag" />
-    <None Include="lighting2.vs" />
-    <None Include="Shaders\anim.frag" />
-    <None Include="Shaders\anim.vs" />
-    <None Include="Shaders\lamp.frag" />
-    <None Include="Shaders\lamp.vs" />
     <None Include="Shaders\lighting.frag" />
     <None Include="Shaders\lighting.vs" />
-    <None Include="Shaders\modelLoading.frag" />
-    <None Include="Shaders\modelLoading.vs" />
-    <None Include="Shaders\SkyBox.frag" />
-    <None Include="Shaders\SkyBox.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Camera.h" />
