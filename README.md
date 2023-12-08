@@ -76,7 +76,7 @@ soil2-debug.lib;assimp-vc140 mt.lib;opengl32.lib;glew32.lib;glfw3.lib
 
 ```PowerShell
 $ git clone https://github.com/DiegoAndresRa/Tower_of_Hanoy.git
-$ cd .\Tower_of_Hanoy\Executable\ Program
+$  cd '.\Tower_of_Hanoy\Executable Program\'
 $ .\ProyectoFinal.exe
 ```
 <h2>Manual de usuario</h2>
